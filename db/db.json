@@ -1,0 +1,95 @@
+{
+  "galeria": [
+    {
+      "id": "1",
+      "arte": "Mergulho Profundo",
+      "artista": "Claudio Calavolpe",
+      "categoria": "Brasilidades",
+      "img": "img/mergulho.webp",
+      "sobre artista e obra": "Fotógrafo autoral e de moda, especializado em retratos. Em 2011 montou um estúdio fotográfico na Pituba, o Studio Cláudio Colavolpe, um espaço que compila galeria, estúdio fotográfico e escola de fotografia. Continua atuando na área acadêmica, agora apenas na própria escola de fotografia Cláudio Colavolpe, oferecendo cursos de fotografia digital básica, avançada, retratos, fotografia de moda, nu e sensual, realizando expedições fotográficas internacionais. Atua também na área profissional, como fotógrafo autoral e publicitário.",
+      "como conservar esta arte?": "Para conservar obras de arte fine art, é fundamental considerar fatores como exposição à luz e umidade. As impressões fine art utilizam tintas e papéis de alta qualidade e padrão museológico, garantindo maior durabilidade, mas os cuidados corretos prolongam ainda mais sua vida útil. Evite a exposição direta ao sol e ambientes úmidos para prevenir desbotamento e deformações. O uso de materiais livres de ácido no manuseio e armazenamento ajuda a preservar as cores e os detalhes da obra. A limpeza periódica e um ambiente controlado garantem que a arte permaneça vibrante por muitos anos."
+    },
+    {
+      "id": "2",
+      "arte": "Seca Solitaria",
+      "artista": "Tarciso Alburqueque",
+      "categoria": "Brasilidades",
+      "img": "img/seca1.jpg",
+      "sobre artista e obra": "Tarciso Albuquerque é natural da cidade de Salvador – BA e admite que sua paixão por fotografia começou no natal de 2008, com a compra da primeira máquina fotográfica e os registros de belos e saudosos momentos. Afirma que com o tempo, aprendeu que a fotografia não se resume a boas fotos, mas se amplia com o olhar da alma, capaz de traduzir uma inspiração e gerar sentimentos àqueles que se propõem a obter um pouco mais, a perceber a arte como retrato da vida, do cotidiano das pessoas e cidades. Agora, seu trabalho propõe a todos o desafio de volver o olhar às belezas da Chapada Diamantina, multicultural da cidade de Salvador, e outras capitais e outros lugares, que, muito além da paisagem urbana, inspira tanta gente em tantos lugares do mundo, através de suas cores, retratando a diversidade da cultura, a beleza da natureza e a contagiante alegria da alma de todos.",
+      "como conservar esta arte?": "Para conservar obras de arte fine art, é fundamental considerar fatores como exposição à luz e umidade. As impressões fine art utilizam tintas e papéis de alta qualidade e padrão museológico, garantindo maior durabilidade, mas os cuidados corretos prolongam ainda mais sua vida útil. Evite a exposição direta ao sol e ambientes úmidos para prevenir desbotamento e deformações. O uso de materiais livres de ácido no manuseio e armazenamento ajuda a preservar as cores e os detalhes da obra. A limpeza periódica e um ambiente controlado garantem que a arte permaneça vibrante por muitos anos."
+    },
+    {
+      "id": "3",
+      "arte": "Curral Del Rey",
+      "artista": "Henry Vitor",
+      "categoria": "Brasilidades",
+      "img": "img/curral1.jpg",
+      "sobre artista e obra": "Nascido em Guaxupé - MG, começa a pintar em 1957. Autodidata, desenvolveu uma técnica muito elaborada com pinceladas sutis e delicadas, buscando a felicidade e a simplicidade da paisagem ideal. Suas obras têm como referência as memórias da infância no interior, inspirando alegria e tranquilidade no observador, que é transportado para um lugar de paz. Destaque na Arte Naif brasileira, teve suas obras expostas na França, Dinamarca, Suíça, Tóquio, Nova York e muitos outros lugares, além de estar em coleções particulares pelo mundo.",
+      "como conservar esta arte?": "Para conservar obras de arte fine art, é fundamental considerar fatores como exposição à luz e umidade. As impressões fine art utilizam tintas e papéis de alta qualidade e padrão museológico, garantindo maior durabilidade, mas os cuidados corretos prolongam ainda mais sua vida útil. Evite a exposição direta ao sol e ambientes úmidos para prevenir desbotamento e deformações. O uso de materiais livres de ácido no manuseio e armazenamento ajuda a preservar as cores e os detalhes da obra. A limpeza periódica e um ambiente controlado garantem que a arte permaneça vibrante por muitos anos."
+    },
+    {
+      "id": "4",
+      "arte": "Amanhecer",
+      "artista": "Fifi Tong",
+      "categoria": "Natureza",
+      "img": "img/amanhecer.webp",
+      "sobre artista e obra": "Formada no Art Center College of Design, Los Angeles, CA, atua como fotógrafa há 28 anos, no mercado de publicidade, retratos, sempre desenvolvendo seus trabalhos autorais. Publicou o livro ORIGEM- Retratos de Família no Brasil, em 2009, com exposição no Memorial do Imigrante, SP. Em 2010 a mesma exposição abriu o Festival de La Luz, em Buenos Aires, e desde então já exibiu em mais 6 espaços, inclusive no Museo de Arte Comtemporáneo, da Salta, Argentina. Em 2012, foi convidada a participar do Festival de La Luz novamente, com a exposição, El Tiempo está Pasando, no Centro Cultural Recoleta. Fifi já teve obras expostas na Pinacoteca.",
+      "como conservar esta arte?": "Para conservar obras de arte fine art, é fundamental considerar fatores como exposição à luz e umidade. As impressões fine art utilizam tintas e papéis de alta qualidade e padrão museológico, garantindo maior durabilidade, mas os cuidados corretos prolongam ainda mais sua vida útil. Evite a exposição direta ao sol e ambientes úmidos para prevenir desbotamento e deformações. O uso de materiais livres de ácido no manuseio e armazenamento ajuda a preservar as cores e os detalhes da obra. A limpeza periódica e um ambiente controlado garantem que a arte permaneça vibrante por muitos anos."
+    },
+    {
+      "id": "5",
+      "arte": "Morning Wonder",
+      "artista": "Jorge Maia",
+      "categoria": "Natureza",
+      "img": "img/morning.webp",
+      "sobre artista e obra": "Morning Wonder revela a magia da costa da Praia de Santa Cruz, próxima a Torres Vedras, onde a areia dourada se estende em harmonia com as ondas suaves do mar atlântico. As cores suaves da alvorada pintam o céu, criando um cenário perfeito para momentos de contemplação e serenidade.",
+      "como conservar esta arte?": "Para conservar obras de arte fine art, é fundamental considerar fatores como exposição à luz e umidade. As impressões fine art utilizam tintas e papéis de alta qualidade e padrão museológico, garantindo maior durabilidade, mas os cuidados corretos prolongam ainda mais sua vida útil. Evite a exposição direta ao sol e ambientes úmidos para prevenir desbotamento e deformações. O uso de materiais livres de ácido no manuseio e armazenamento ajuda a preservar as cores e os detalhes da obra. A limpeza periódica e um ambiente controlado garantem que a arte permaneça vibrante por muitos anos."
+    },
+    {
+      "id": "6",
+      "arte": "The Prisioner",
+      "artista": "Evgeni Dinev",
+      "categoria": "Natureza",
+      "img": "img/prisioner.webp",
+      "sobre artista e obra": "Evgeni Dinev é um fotógrafo búlgaro que registra as paisagens de sua terra natal. Seu trabalho na fotografia começou em 2007, dando vida a sua vontade de captar a vista magnífica da Bulgária, mas de uma forma arrebatadora. Em seus trabalhos, a natureza revela seus segredos nos momentos mais perfeitos, com muita paciência e esforço, ele mostra a capacidade de um artista transformar o comum em sublime. Evgeni está em uma busca constante de novas paisagens, até achar o ligar certo e o tempo certo para dar vida a suas fotos.",
+      "como conservar esta arte?": "Para conservar obras de arte fine art, é fundamental considerar fatores como exposição à luz e umidade. As impressões fine art utilizam tintas e papéis de alta qualidade e padrão museológico, garantindo maior durabilidade, mas os cuidados corretos prolongam ainda mais sua vida útil. Evite a exposição direta ao sol e ambientes úmidos para prevenir desbotamento e deformações. O uso de materiais livres de ácido no manuseio e armazenamento ajuda a preservar as cores e os detalhes da obra. A limpeza periódica e um ambiente controlado garantem que a arte permaneça vibrante por muitos anos."
+    },
+    {
+      "id": "7",
+      "arte": "Tico e Teco",
+      "artista": "Mirian de los Angeles",
+      "categoria": "Destaque",
+      "img": "img/tico.webp",
+      "sobre artista e obra": "Mirian de los Angeles é a artista brasileira capaz de traduzir sonhos em belíssimas obras de Arte. Abstração e profundidade qualificam na perfeição a sua narrativa cuidada e inteligente. De traços que lembram padrões eletrônicos, como nos quadros “Tico e Teco” e “Quindim da Sorte”, a obra de Mirian de los Angeles caracteriza-se pelas cores vibrantes que jogam com singelas luzes. Aluna exemplar do prestigiado pintor Osmar Pinheiro, a artista conta com incontáveis exposições individuais e coletivas. A sua obra consta ainda em coleções particulares e oficiais.",
+      "como conservar esta arte?": "Para conservar obras de arte fine art, é fundamental considerar fatores como exposição à luz e umidade. As impressões fine art utilizam tintas e papéis de alta qualidade e padrão museológico, garantindo maior durabilidade, mas os cuidados corretos prolongam ainda mais sua vida útil. Evite a exposição direta ao sol e ambientes úmidos para prevenir desbotamento e deformações. O uso de materiais livres de ácido no manuseio e armazenamento ajuda a preservar as cores e os detalhes da obra. A limpeza periódica e um ambiente controlado garantem que a arte permaneça vibrante por muitos anos."
+    },
+    {
+      "id": "8",
+      "arte": "Bailarina na Favela",
+      "artista": "Tânia Azevedo",
+      "categoria": "Destaque",
+      "img": "img/bailarina.webp",
+      "sobre artista e obra": "Através da tela de uma obra naif criada por Tania Azevedo, somos transportados para uma cena repleta de brasilidade. A vida pulsante das comunidades rurais da Bahia e das favelas de Salvador ganha vida com pinceladas vibrantes e cores alegres. A cena retrata pessoas felizes e laboriosas, imersas em uma atmosfera de harmonia com a natureza exuberante ao redor. Essa obra naif de Tania Azevedo é um verdadeiro hino à cultura brasileira, evidenciando sua riqueza e diversidade..",
+      "como conservar esta arte?": "Para conservar obras de arte fine art, é fundamental considerar fatores como exposição à luz e umidade. As impressões fine art utilizam tintas e papéis de alta qualidade e padrão museológico, garantindo maior durabilidade, mas os cuidados corretos prolongam ainda mais sua vida útil. Evite a exposição direta ao sol e ambientes úmidos para prevenir desbotamento e deformações. O uso de materiais livres de ácido no manuseio e armazenamento ajuda a preservar as cores e os detalhes da obra. A limpeza periódica e um ambiente controlado garantem que a arte permaneça vibrante por muitos anos."
+    },
+    {
+      "id": "9",
+      "arte": "Amanhecer no Rio São Francisco",
+      "artista": "Matheus Cunha",
+      "categoria": "Destaque",
+      "img": "img/destaque3.webp",
+      "sobre artista e obra": "Fotógrafo desde 2014, procura registrar em seu trabalho ambientes naturais e urbanos, destacando-se o registro de paisagens, da flora, de locais de interesse histórico e/ou arquitetônico, bem como do registro de retratos e cenas cotidianas urbanas. Apaixonado por viagens e por fotografia, vê na arte como uma forma de registrar e mostrar seu olhar sobre as pessoas e a natureza.",
+      "como conservar esta arte?": "Para conservar obras de arte fine art, é fundamental considerar fatores como exposição à luz e umidade. As impressões fine art utilizam tintas e papéis de alta qualidade e padrão museológico, garantindo maior durabilidade, mas os cuidados corretos prolongam ainda mais sua vida útil. Evite a exposição direta ao sol e ambientes úmidos para prevenir desbotamento e deformações. O uso de materiais livres de ácido no manuseio e armazenamento ajuda a preservar as cores e os detalhes da obra. A limpeza periódica e um ambiente controlado garantem que a arte permaneça vibrante por muitos anos."
+    },
+    {
+      "arte": "Seres da Floresta Amazônica 08",
+      "artista": "Sandra Albuquerque",
+      "categoria": "Pintura",
+      "img": "https://www.democrart.com.br/cdn/shop/files/sandra-albuquerque-seres-da-floresta-08-ajsutadacopy.jpg?v=1761052425&width=1445",
+      "sobre artista e obra": "Essas obras são um manifesto visual em defesa da natureza e de todos os seres que nela habitam. Por meio de formas orgânicas e cores que remetem às florestas, rios e paisagens vivas, elas nos lembram que a arte pode despertar consciência e inspirar atitudes transformadoras. Cada traço convida à reflexão sobre nossa responsabilidade coletiva: amar, respeitar e proteger não apenas as árvores e os rios, mas todos os seres vivos que compõem esse ecossistema essencial à vida. A arte, aqui, se torna um chamado urgente para cuidarmos da Terra com sensibilidade e compromisso.",
+      "como conservar esta arte?": "Para conservar obras de arte fine art, é fundamental considerar fatores como exposição à luz e umidade. As impressões fine art utilizam tintas e papéis de alta qualidade e padrão museológico, garantindo maior durabilidade, mas os cuidados corretos prolongam ainda mais sua vida útil. Evite a exposição direta ao sol e ambientes úmidos para prevenir desbotamento e deformações. O uso de materiais livres de ácido no manuseio e armazenamento ajuda a preservar as cores e os detalhes da obra. A limpeza periódica e um ambiente controlado garantem que a arte permaneça vibrante por muitos anos.",
+      "nova": true,
+      "id": "9f9b"
+    }
+  ]
+}

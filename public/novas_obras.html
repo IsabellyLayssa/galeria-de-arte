@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Novas Obras</title>
+</head>
+<body>
+  <h1>Obras Adicionadas Recentemente</h1>
+  <ul id="lista"></ul>
+
+  <script>
+    fetch("http://localhost:3000/galeria")
+      .then(res => res.json())
+      .then(data => {
+        const lista = document.getElementById("lista");
+        lista.innerHTML = "";
+
+        // Filtra apenas obras com campo nova = true
+        const novas = data.filter(item => item.nova);
+
+        novas.forEach(item => {
+          const li = document.createElement("li");
+          li.innerHTML = `<a href="detalhes.html?id=${item.id}">${item.arte} - ${item.artista}</a>`;
+          lista.appendChild(li);
+        });
+      });
+  </script>
+</body>
+</html>

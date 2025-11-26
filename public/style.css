@@ -1,0 +1,150 @@
+/*
+body {
+    background-color: black;
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+*/
+/*
+header {
+    background-color: #000;
+    height: 92px;
+}
+
+#logo {
+    width: 80px;
+    padding: 10px 35px;
+}
+
+.menuprincipal {
+    float: right;
+
+}
+
+.menuprincipal ul {
+    list-style-type: none;
+}
+
+.menuprincipal ul li {
+    display: inline-block;
+
+}
+
+.menuprincipal ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    padding: 24px;
+
+}
+
+.menuprincipal ul li a:hover {
+    color: gray;
+}
+
+.caixa-pesquisa {
+    float: right;
+    padding-top: 29px;
+
+}
+*/
+#destaque {
+    display: block;
+    width: 1439px;
+    height: 450px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 67px;
+    color: white;
+}
+
+#show {
+    text-align: center;
+    font-size: 30px;
+    color: white;
+}
+
+
+.dtq{
+    display: inline-block;
+   margin: 5px 30px 5px 65px;
+}
+
+#pintura{
+    width: 600px;
+    height: 650px;
+    display: block;
+}
+
+#fotografia{
+width: 600px;
+    height: 650px;
+    display: block;
+}
+
+footer {
+    background-color: #000;
+    text-align: center;
+    color: white;
+}
+
+.custom-footer {
+  background-color: #1c1f24; 
+  color: #fff;
+  border-top: 2px solid #2c2f34;
+}
+
+.custom-footer a {
+  color: #0dcaf0; 
+  transition: color 0.3s;
+}
+
+.custom-footer a:hover {
+  color: #66d9ff;
+  text-decoration: underline;
+}
+
+.custom-footer p {
+  margin-bottom: 6px;
+}
+
+.custom-footer h6 a:hover {
+  color: #66d9ff;
+}
+
+/*
+article{
+    display: inline-block;
+    width: calc(24% - 10px);
+    vertical-align: top;
+    margin: 10px;
+    padding: 15px;
+    box-sizing: border-box;
+    background-color: gray;
+}
+*/
+.titulo {
+    color: white;
+
+}
+
+.sub-titulo {
+    color: white;
+}
+
+@media (max-width: 992px) {
+      #containerBrasilidades .card,
+      #containerNatureza .card {
+        flex: 0 0 48%;
+      }
+    }
+
+    @media (max-width: 576px) {
+      #containerBrasilidades .card,
+      #containerNatureza .card {
+        flex: 0 0 100%;
+      }
+    }

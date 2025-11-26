@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes da Arte</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+
+        .card {
+            background-color: #1f1f1f;
+            border: none;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .card-body {
+            padding: 2rem;
+        }
+
+        h3, h4, h5, p, strong, .card-title, .card-subtitle {
+            color: #ffffff !important;
+        }
+
+        .btn-secondary {
+            background-color: #343a40;
+            border: none;
+            color: #ffffff;
+        }
+
+        .btn-secondary:hover {
+            background-color: #495057;
+        }
+
+        
+.imagens-relacionadas-title {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+
+.imagens-relacionadas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    gap: 1rem; 
+}
+
+
+.imagens-relacionadas img {
+    flex: 1 1 calc(33% - 1rem); 
+    max-width: calc(33% - 1rem);
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+        @media (max-width: 768px) {
+            .col-md-6 {
+                text-align: center;
+            }
+            .imagens-relacionadas img {
+                width: 100%;
+                max-width: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container my-5">
+        <a href="index.html" class="btn btn-secondary mb-4">⬅ Voltar</a>
+
+        <div id="detalhes" class="card p-3"></div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id");
+
+    fetch(`http://localhost:3000/galeria/${id}`)
+      .then(res => {
+        if (!res.ok) throw new Error("Erro na requisição");
+        return res.json();
+      })
+      .then(item => {
+        document.getElementById("detalhes").innerHTML = `
+          <div class="card bg-dark text-white">
+            <img src="${item.img}" class="card-img-top" alt="${item.arte}">
+            <div class="card-body">
+              <h2 class="card-title">${item.arte}</h2>
+              <h5 class="card-subtitle mb-2 text-muted">${item.artista}</h5>
+              <p><strong>Categoria:</strong> ${item.categoria}</p>
+              <p><strong>Sobre:</strong> ${item["sobre artista e obra"]}</p>
+              <p><strong>Conservação:</strong> ${item["como conservar esta arte?"]}</p>
+            </div>
+          </div>
+        `;
+      })
+      .catch(err => {
+        document.getElementById("detalhes").innerHTML = "<p class='text-danger'>Erro ao carregar detalhes da obra.</p>";
+        console.error(err);
+      });
+  </script>
+
+</body>
+</html>
