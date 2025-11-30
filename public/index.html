@@ -9,6 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
 
 <body class="bg-dark">
@@ -44,11 +45,10 @@
           <li class="nav-item">
             <a class="nav-link text-white" href="cadastro_arte.html">Adicionar Obra</a>
           </li>
-          <!-- 
           <li class="nav-item">
-            <a class="nav-link disabled text-white" aria-disabled="true">Disabled</a>
+            <a class="nav-link text-white" href="favoritos.html">Meus Favoritos</a>
           </li>
-        -->
+          
         </ul>
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
@@ -107,17 +107,7 @@
 
     <h1>Bem vindo(a)!</h1>
 
-    <section>
-
-      <div class="dtq">
-        <a href="#"><img src="img/pintura.png" id="pintura"></a>
-      </div>
-
-      <div class="dtq">
-        <a href="#"><img src="img/fotografia.png" id="fotografia"></a>
-      </div>
-
-    </section>
+    
 
     <h3 id="show"> Brasilidades </h3>
 
@@ -148,6 +138,7 @@
             <h5 class="card-title">Henry Vitor</h5>
             <p class="card-text">Curral Del Rey</p>
             <a href="#" class="btn btn-primary" id="btnCarregaDados">Detalhe</a>
+
           </div>
         </div>
 
@@ -165,6 +156,7 @@
             <h5 class="card-title">Fifi Tong</h5>
             <p class="card-text">Amanhecer</p>
             <a href="#" class="btn btn-primary" id="btnCarregaDados">Detalhe</a>
+
           </div>
         </div>
 
@@ -174,6 +166,7 @@
             <h5 class="card-title">Jorge Maia</h5>
             <p class="card-text">Morning Wonder</p>
             <a href="#" class="btn btn-primary" id="btnCarregaDados">Detalhe</a>
+
           </div>
         </div>
 
@@ -183,6 +176,7 @@
             <h5 class="card-title">Evgeni Dinev</h5>
             <p class="card-text">The Prisioner</p>
             <a href="#" class="btn btn-primary" id="btnCarregaDados">Detalhe</a>
+
           </div>
         </div>
 
@@ -195,13 +189,13 @@
         <!-- Aqui os cards das obras novas serão inseridos via JS -->
       </div>
     </div>
-<!-- Gráfico de Obras por Categoria -->
-<div class="container my-5">
-  <h2 class="text-center text-white mb-4">Resumo das Categorias</h2>
-  <div style="background:#fff; padding:20px; border-radius:10px;">
-    <canvas id="graficoObras"></canvas>
-  </div>
-</div>
+    <!-- Gráfico de Obras por Categoria -->
+    <div class="container my-5">
+      <h2 class="text-center text-white mb-4">Resumo das Categorias</h2>
+      <div style="background:#fff; padding:20px; border-radius:10px;">
+        <canvas id="graficoObras"></canvas>
+      </div>
+    </div>
 
 
   </main>
@@ -236,25 +230,25 @@
       </div>
     </div>
   </footer>
-   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <script>
-  fetch("http://localhost:3000/galeria")
-    .then(res => res.json())
-    .then(data => {
-      const containerNovas = document.getElementById("containerNovas");
-      containerNovas.innerHTML = "";
+    fetch("http://localhost:3000/galeria")
+      .then(res => res.json())
+      .then(data => {
+        const containerNovas = document.getElementById("containerNovas");
+        containerNovas.innerHTML = "";
 
-      const novas = data.filter(item => item.nova); // só obras com campo nova = true
+        const novas = data.filter(item => item.nova); 
 
-      if (novas.length === 0) {
-        containerNovas.innerHTML = "<p class='text-white'>Nenhuma obra nova cadastrada ainda.</p>";
-      }
+        if (novas.length === 0) {
+          containerNovas.innerHTML = "<p class='text-white'>Nenhuma obra nova cadastrada ainda.</p>";
+        }
 
-      novas.forEach(item => {
-        const card = document.createElement("div");
-        card.className = "card col-4 bg-dark text-white";
-        card.innerHTML = `
+        novas.forEach(item => {
+          const card = document.createElement("div");
+          card.className = "card col-4 bg-dark text-white";
+          card.innerHTML = `
           <img src="${item.img}" class="card-img-top" alt="${item.arte}">
           <div class="card-body">
             <h5 class="card-title">${item.artista}</h5>
@@ -266,81 +260,170 @@
             </div>
           </div>
         `;
-        containerNovas.appendChild(card);
-      });
-    })
-    .catch(err => console.error("Erro ao carregar novas obras:", err));
+          containerNovas.appendChild(card);
+        });
+      })
+      .catch(err => console.error("Erro ao carregar novas obras:", err));
 
-  // Função para excluir obra
-  function excluirObra(id) {
-    if (confirm("Tem certeza que deseja excluir esta obra?")) {
-      fetch(`http://localhost:3000/galeria/${id}`, { method: "DELETE" })
-        .then(() => {
-          alert("Obra excluída com sucesso!");
-          location.reload(); // recarrega a página para atualizar a lista
-        })
-        .catch(err => console.error("Erro ao excluir obra:", err));
+   
+    function excluirObra(id) {
+      if (confirm("Tem certeza que deseja excluir esta obra?")) {
+        fetch(`http://localhost:3000/galeria/${id}`, { method: "DELETE" })
+          .then(() => {
+            alert("Obra excluída com sucesso!");
+            location.reload(); 
+          })
+          .catch(err => console.error("Erro ao excluir obra:", err));
+      }
     }
-  }
 
-  //grafico
-  fetch("http://localhost:3000/galeria")
-    .then(res => res.json())
-    .then(data => {
-      // Conta as obras por categoria
-      const contagem = {};
-      data.forEach(obra => {
-        const categoria = obra.categoria;
-        contagem[categoria] = (contagem[categoria] || 0) + 1;
+    
+    fetch("http://localhost:3000/galeria")
+      .then(res => res.json())
+      .then(data => {
+      
+        const contagem = {};
+        data.forEach(obra => {
+          const categoria = obra.categoria;
+          contagem[categoria] = (contagem[categoria] || 0) + 1;
+        });
+
+        
+        const categorias = Object.keys(contagem);
+        const valores = Object.values(contagem);
+
+        const ctx = document.getElementById('graficoObras').getContext('2d');
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: categorias,
+            datasets: [{
+              label: 'Quantidade de Obras',
+              data: valores,
+              backgroundColor: [
+                '#ff6384', '#36a2eb', '#ffce56',
+                '#4bc0c0', '#9966ff', '#00cc99'
+              ]
+            }]
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              title: {
+                display: true,
+                text: 'Quantidade de Obras por Categoria',
+                color: '#000',
+                font: { size: 18 }
+              },
+              legend: { display: false }
+            },
+            scales: {
+              x: { ticks: { color: '#000' } },
+              y: { ticks: { color: '#000' }, beginAtZero: true }
+            }
+          }
+        });
       });
 
-      // Prepara os dados para o gráfico
-      const categorias = Object.keys(contagem);
-      const valores = Object.values(contagem);
+   
+    const favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
 
-      const ctx = document.getElementById('graficoObras').getContext('2d');
-      new Chart(ctx, {
-        type: 'bar',
-        data: {
-          labels: categorias,
-          datasets: [{
-            label: 'Quantidade de Obras',
-            data: valores,
-            backgroundColor: [
-              '#ff6384', '#36a2eb', '#ffce56',
-              '#4bc0c0', '#9966ff', '#00cc99'
-            ]
-          }]
-        },
-        options: {
-          responsive: true,
-          plugins: {
-            title: {
-              display: true,
-              text: 'Quantidade de Obras por Categoria',
-              color: '#000',
-              font: { size: 18 }
-            },
-            legend: { display: false }
-          },
-          scales: {
-            x: { ticks: { color: '#000' } },
-            y: { ticks: { color: '#000' }, beginAtZero: true }
-          }
+    
+    document.querySelectorAll('.btn-favorito').forEach(btn => {
+      const obraId = btn.getAttribute('data-id');
+      const icon = btn.querySelector('i');
+
+      
+      if (favoritos.includes(obraId)) {
+        icon.classList.remove('bi-heart');
+        icon.classList.add('bi-heart-fill');
+      }
+
+      
+      btn.addEventListener('click', () => {
+        icon.classList.toggle('bi-heart');
+        icon.classList.toggle('bi-heart-fill');
+
+        if (icon.classList.contains('bi-heart-fill')) {
+          
+          favoritos.push(obraId);
+        } else {
+          
+          const index = favoritos.indexOf(obraId);
+          if (index > -1) favoritos.splice(index, 1);
         }
+
+        localStorage.setItem('favoritos', JSON.stringify(favoritos));
       });
     });
 
+    document.addEventListener("DOMContentLoaded", () => {
+  
+  const input = document.querySelector("form[role='search'] input[type='search']");
+  if (!input) {
+    console.warn("Campo de busca não encontrado. Confira o HTML do formulário.");
+    return;
+  }
 
-</script>
+  
+  function aplicarFiltro(termo) {
+    const termoNormalizado = termo.trim().toLowerCase();
+
+    
+    const cards = document.querySelectorAll(".card");
+
+    cards.forEach(card => {
+      const tituloEl = card.querySelector(".card-title");
+      const descEl   = card.querySelector(".card-text");
+
+      const titulo = tituloEl ? tituloEl.textContent.toLowerCase() : "";
+      const descricao = descEl ? descEl.textContent.toLowerCase() : "";
+
+      const combina = !termoNormalizado || 
+                      titulo.includes(termoNormalizado) || 
+                      descricao.includes(termoNormalizado);
+
+      
+      const coluna = card.closest(".col-4") || card.parentElement;
+      if (coluna) {
+        coluna.classList.toggle("d-none", !combina);
+      } else {
+        
+        card.classList.toggle("d-none", !combina);
+      }
+    });
+  }
+
+  
+  input.addEventListener("keyup", () => {
+    aplicarFiltro(input.value);
+  });
+
+  
+  const form = input.closest("form");
+  if (form) {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      aplicarFiltro(input.value);
+    });
+  }
+
+  
+  aplicarFiltro("");
+});
+
+
+
+
+  </script>
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
     crossorigin="anonymous"></script>
   <script src="js/crud.js"></script>
-    <script src="js/app.js"></script>
-  
+  <script src="js/app.js"></script>
+
 
 </body>
 

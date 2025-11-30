@@ -6,16 +6,16 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
-      background-color: #000; /* fundo preto da página */
+      background-color: #000; 
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh; /* ocupa toda a altura da tela */
+      height: 100vh; 
       margin: 0;
     }
 
     .form-container {
-      background-color: #fff; /* fundo branco do formulário */
+      background-color: #fff; 
       padding: 2rem;
       border-radius: 10px;
       width: 100%;
@@ -24,13 +24,13 @@
     }
 
     .btn-custom {
-      background-color: #000; /* botão preto */
-      color: #fff;            /* texto branco */
+      background-color: #000; 
+      color: #fff;            
       border: none;
     }
 
     .btn-custom:hover {
-      background-color: #333; /* tom mais claro no hover */
+      background-color: #333; 
     }
   </style>
 </head>
@@ -69,7 +69,7 @@
     const id = params.get("id");
 
     if (id) {
-      // Carregar dados para edição
+      
       fetch(`http://localhost:3000/galeria/${id}`)
         .then(res => res.json())
         .then(item => {
@@ -91,7 +91,7 @@
         img: document.getElementById("img").value,
         "sobre artista e obra": document.getElementById("sobre").value,
         "como conservar esta arte?": document.getElementById("conservacao").value,
-        nova: true // marca automaticamente como nova
+        nova: true 
       };
 
       fetch(`http://localhost:3000/galeria${id ? "/" + id : ""}`, {
@@ -101,7 +101,7 @@
       })
       .then(() => {
         alert("Obra salva com sucesso!");
-        window.location.href = "index.html"; // redireciona para index.html
+        window.location.href = "index.html"; 
       });
     });
 
@@ -110,7 +110,7 @@
         fetch(`http://localhost:3000/galeria/${id}`, { method: "DELETE" })
           .then(() => {
             alert("Obra excluída com sucesso!");
-            window.location.href = "index.html"; // volta para index.html após excluir
+            window.location.href = "index.html"; 
           });
       } else {
         alert("Nenhuma obra selecionada para exclusão.");

@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalhes da Arte</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <style>
         body {
             background-color: #121212;
@@ -32,7 +34,13 @@
             padding: 2rem;
         }
 
-        h3, h4, h5, p, strong, .card-title, .card-subtitle {
+        h3,
+        h4,
+        h5,
+        p,
+        strong,
+        .card-title,
+        .card-subtitle {
             color: #ffffff !important;
         }
 
@@ -46,35 +54,68 @@
             background-color: #495057;
         }
 
-        
-.imagens-relacionadas-title {
-    text-align: center;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-}
+
+        .imagens-relacionadas-title {
+            text-align: center;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
 
 
-.imagens-relacionadas {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; 
-    gap: 1rem; 
-}
+        .imagens-relacionadas {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
 
 
-.imagens-relacionadas img {
-    flex: 1 1 calc(33% - 1rem); 
-    max-width: calc(33% - 1rem);
-    height: auto;
-    border-radius: 8px;
-    object-fit: cover;
-}
+        .imagens-relacionadas img {
+            flex: 1 1 calc(33% - 1rem);
+            max-width: calc(33% - 1rem);
+            height: auto;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .lightbox {
+            display: none;
+            
+            position: fixed;
+            z-index: 9999;
+            padding-top: 60px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .lightbox-content {
+            margin: auto;
+            display: block;
+            max-width: 80%;
+            max-height: 80%;
+            border-radius: 8px;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
 
         @media (max-width: 768px) {
             .col-md-6 {
                 text-align: center;
             }
+
             .imagens-relacionadas img {
                 width: 100%;
                 max-width: 200px;
@@ -90,18 +131,18 @@
         <div id="detalhes" class="card p-3"></div>
     </div>
 
-    <script src="app.js"></script>
+    <script src="js/app.js"></script>
     <script>
-    const params = new URLSearchParams(window.location.search);
-    const id = params.get("id");
+        const params = new URLSearchParams(window.location.search);
+        const id = params.get("id");
 
-    fetch(`http://localhost:3000/galeria/${id}`)
-      .then(res => {
-        if (!res.ok) throw new Error("Erro na requisição");
-        return res.json();
-      })
-      .then(item => {
-        document.getElementById("detalhes").innerHTML = `
+        fetch(`http://localhost:3000/galeria/${id}`)
+            .then(res => {
+                if (!res.ok) throw new Error("Erro na requisição");
+                return res.json();
+            })
+            .then(item => {
+                document.getElementById("detalhes").innerHTML = `
           <div class="card bg-dark text-white">
             <img src="${item.img}" class="card-img-top" alt="${item.arte}">
             <div class="card-body">
@@ -110,15 +151,90 @@
               <p><strong>Categoria:</strong> ${item.categoria}</p>
               <p><strong>Sobre:</strong> ${item["sobre artista e obra"]}</p>
               <p><strong>Conservação:</strong> ${item["como conservar esta arte?"]}</p>
+<!-- Botão de Favoritar -->
+      <button class="btn btn-outline-danger btn-favorito" data-id="${item.id}">
+        <i class="bi bi-heart"></i>
+      </button>
+
+<h3>Imagens relacionadas</h3>
+  <div class="imagens-relacionadas"></div>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+  <span class="close">&times;</span>
+  <img class="lightbox-content" id="lightbox-img">
+</div>
+
+              
+
             </div>
           </div>
         `;
-      })
-      .catch(err => {
-        document.getElementById("detalhes").innerHTML = "<p class='text-danger'>Erro ao carregar detalhes da obra.</p>";
-        console.error(err);
-      });
-  </script>
+                
+                console.log("Autor recebido:", item.artista);
+
+                carregarImagensRelacionadas(item.artista);
+               
+                const lightbox = document.getElementById("lightbox");
+                const closeBtn = document.querySelector(".close");
+
+                if (closeBtn) {
+                    closeBtn.addEventListener("click", () => {
+                        lightbox.style.display = "none";
+                    });
+                }
+
+                if (lightbox) {
+                    lightbox.addEventListener("click", (e) => {
+                        if (e.target === lightbox) {
+                            lightbox.style.display = "none";
+                        }
+                    });
+                }
+
+            })
+            .catch(err => {
+                document.getElementById("detalhes").innerHTML =
+                    "<p class='text-danger'>Erro ao carregar detalhes da obra.</p>";
+                console.error(err);
+            });
+
+
+        
+        setTimeout(() => {
+            const favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
+            const btn = document.querySelector('.btn-favorito');
+            if (!btn) return;
+
+            const icon = btn.querySelector('i');
+            const obraId = btn.getAttribute('data-id');
+
+           
+            if (favoritos.includes(obraId)) {
+                icon.classList.remove('bi-heart');
+                icon.classList.add('bi-heart-fill');
+            }
+
+            btn.addEventListener('click', () => {
+                icon.classList.toggle('bi-heart');
+                icon.classList.toggle('bi-heart-fill');
+
+                if (icon.classList.contains('bi-heart-fill')) {
+                    favoritos.push(obraId);
+                } else {
+                    const index = favoritos.indexOf(obraId);
+                    if (index > -1) favoritos.splice(index, 1);
+                }
+
+                localStorage.setItem('favoritos', JSON.stringify(favoritos));
+            });
+        }, 100);
+
+
+
+    </script>
+
 
 </body>
+
 </html>

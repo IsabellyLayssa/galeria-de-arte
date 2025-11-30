@@ -140,22 +140,35 @@ const imagensPorAutor = {
 
 
 function carregarImagensRelacionadas(autor) {
-    const container = document.querySelector('.imagens-relacionadas');
-    if (!container) return;
+  const container = document.querySelector('.imagens-relacionadas');
+  if (!container) return;
 
-    container.innerHTML = ""; 
+  container.innerHTML = "";
 
-    if (imagensPorAutor[autor]) {
-        imagensPorAutor[autor].forEach(src => {
-            const img = document.createElement('img');
-            img.src = src;
-            img.alt = `Imagem relacionada a ${autor}`;
-            container.appendChild(img);
-        });
-    } else {
-        container.innerHTML = `<p class="text-muted">Nenhuma imagem disponível para este autor.</p>`;
-    }
+  if (imagensPorAutor[autor]) {
+    imagensPorAutor[autor].forEach(src => {
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = `Imagem relacionada a ${autor}`;
+      img.style.cursor = "pointer";
+
+      
+      img.addEventListener("click", () => {
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+        lightbox.style.display = "block";
+        lightboxImg.src = src;
+      });
+
+      container.appendChild(img);
+    });
+  } else {
+    container.innerHTML = `<p class="text-muted">Nenhuma imagem disponível para este autor.</p>`;
+  }
 }
+
+
+
 
 
 carregaDados();

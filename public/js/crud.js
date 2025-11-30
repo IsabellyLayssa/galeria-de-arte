@@ -1,6 +1,6 @@
 const apiURL = "http://localhost:3000/galeria";
 
-// 🔹 Listar todas as obras
+
 async function listarGaleria() {
   const response = await fetch(apiURL);
   const obras = await response.json();
@@ -25,7 +25,7 @@ async function listarGaleria() {
   });
 }
 
-// 🔹 Adicionar nova obra
+
 async function adicionarObra(event) {
   event.preventDefault();
 
@@ -49,7 +49,7 @@ async function adicionarObra(event) {
   listarGaleria();
 }
 
-// 🔹 Editar obra (carregar dados no formulário)
+
 async function editarObra(id) {
   const response = await fetch(`${apiURL}/${id}`);
   const obra = await response.json();
@@ -63,7 +63,7 @@ async function editarObra(id) {
   document.getElementById("categoria").value = obra.categoria;
 }
 
-// 🔹 Atualizar obra existente
+
 async function atualizarObra(event) {
   event.preventDefault();
 

@@ -135,6 +135,12 @@ article{
     color: white;
 }
 
+.btn-outline-danger i {
+  color: red;
+  font-size: 1.2rem; 
+}
+
+
 @media (max-width: 992px) {
       #containerBrasilidades .card,
       #containerNatureza .card {
